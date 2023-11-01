@@ -1,0 +1,21 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.textarea {
+    border: 2px solid #2A9D8F;
+    border-radius: 10px;
+    padding: 0.5em;
+    min-height: 150px;
+    color: #264653;
+    font: inherit;
+    resize: none;
+}
+
+.addBtn {
+    composes: resetBtn from '../../index.css';
+    color: #2A9D8F;
+    font: inherit;
+}

@@ -1,0 +1,96 @@
+/* checkbox */
+
+.checkboxWrap {
+    padding: 0.5em;
+}
+
+.checkboxInner {
+    --size: 1em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: var(--size);
+    width: var(--size);
+}
+
+.checkboxInput {
+    --color: #2A9D8F;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.checkboxInput::after {
+    --size: 65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    display: none;
+    border-radius: 50%;
+    height: var(--size);
+    width: var(--size);
+    background: var(--color);
+}
+
+.checkboxInput::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid var(--color);
+    border-radius: 50%;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.checkboxInput:checked::after {
+    display: block;
+}
+
+.checkboxInput:disabled {
+    --color: grey;
+}
+
+/*  */
+
+.title {
+    composes: resetParagraph from '../../index.css';
+    flex: 1;
+    line-height: 1.5;
+}
+
+.titleCompleted {
+    text-decoration: line-through;
+}
+
+.titleInput {
+    flex: 1;
+    border: none;
+    padding: 0;
+    color: #264653;
+    font: inherit;
+    line-height: 1.5;
+    outline: none;
+}
+
+.infoBtn {
+    composes: resetBtn from '../../index.css';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    font-size: inherit;
+}
+
+.infoIcon {
+    --size: 1em;
+    height: var(--size);
+    width: var(--size);
+    color: #2A9D8F;
+}
