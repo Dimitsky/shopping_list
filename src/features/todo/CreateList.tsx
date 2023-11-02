@@ -5,7 +5,7 @@ import { addList } from './todoSlice';
 import { nanoid } from '@reduxjs/toolkit';
 
 export function CreateList() {
-    const [value, setValue] = useState<string>('Бананы, Молоко, Хлеб, Водка');
+    const [value, setValue] = useState<string>('');
     const appDispatch = useAppdispatch();
 
     // Управляет textarea 
