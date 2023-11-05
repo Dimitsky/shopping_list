@@ -89,8 +89,5 @@
 }
 
 .infoIcon {
-    --size: 1em;
-    height: var(--size);
-    width: var(--size);
-    color: #2A9D8F;
+    composes: icon from '../../index.css';
 }

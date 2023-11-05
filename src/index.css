@@ -37,3 +37,19 @@ code {
     margin-top: 0;
     margin-bottom: 0;
 }
+
+.resetList {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+/* images */
+
+.icons {
+    --size: 1em;
+    height: var(--size);
+    width: var(--size);
+    color: #2A9D8F;
+}

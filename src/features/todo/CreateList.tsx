@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useAppdispatch } from '../../app/hooks';
-import styles from './CreateList.module.css';
 import { addList } from './todoSlice';
 import { nanoid } from '@reduxjs/toolkit';
+import styles from './CreateList.module.css';
 
 export function CreateList() {
     const [value, setValue] = useState<string>('');
