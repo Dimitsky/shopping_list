@@ -17,4 +17,4 @@
 * Redux Toolkit
 * TypeScript 
 
-Приложение создано на основе шаблона [cra-template-redux-typescript](https://github.com/reduxjs/redux-templates). Мое первое приложение на TypeScript. 
+Приложение создано на основе шаблона [cra-template-redux-typescript](https://github.com/reduxjs/redux-templates). Стили только для мобильных устройств. Мое первое приложение на TypeScript. 
