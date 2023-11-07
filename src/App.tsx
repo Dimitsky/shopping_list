@@ -2,10 +2,8 @@ import { useRef } from "react";
 import { useAppSelector } from "./app/hooks";
 import { TodoList } from "./features/todo/TodoList";
 import { CreateList } from "./features/todo/CreateList";
-import { ClearList } from "./features/todo/ClearList";
 import type { Todo } from "./features/todo/types/types";
 import './App.css';
-import { AddTodo } from "./features/todo/AddTodo";
 import { Menu } from "./features/menu/Menu";
 
 function App() {
@@ -14,8 +12,11 @@ function App() {
 
     const sortedTodoList = [...todoList]
         .sort((a, b) => {
-            if (a.title > b.title) return 1;
-            if (a.title < b.title) return -1;
+            const aTitle = a.title.toUpperCase();
+            const bTitle = b.title.toUpperCase();
+            
+            if (aTitle > bTitle) return 1;
+            if (aTitle < bTitle) return -1;
             return 0;
         }).sort((a: Todo, b: Todo) => {
             if (a.completed > b.completed) return 1;

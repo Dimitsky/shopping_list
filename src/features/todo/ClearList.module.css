@@ -1,6 +1,0 @@
-.clearBtn {
-    composes: resetBtn from '../../index.css';
-    margin-left: auto;
-    color: #2A9D8F;
-    font: inherit;
-}

@@ -12,15 +12,24 @@ export function TodoList({ list }: TodoListProps) {
             className={styles.list}
             id="todoList"
         >
-            {list.map((todo) => (
-                <li
-                    className={styles.item}
-                    id="item_wrapper"
-                    key={todo.id}
-                >
-                    <TodoItem item={todo} />
-                </li>
-            ))}
+            {list.map((todo, index, arr) => {
+                const prevFirstLetter = index === 0 ? arr[index].title.at(0)?.toUpperCase() : arr[index - 1].title.at(0)?.toUpperCase();
+                const currFirstLettre = arr[index].title.at(0)?.toUpperCase();
+
+                return (
+                    <li
+                        className={styles.item}
+                        key={todo.id}
+                    >
+                        {(prevFirstLetter !== currFirstLettre || index === 0) && <h3 className={styles.heading}>{currFirstLettre}</h3>}
+                        <div
+                            className={styles.inner}
+                        >
+                            <TodoItem item={todo}/>
+                        </div>
+                    </li>
+                );
+            })}
         </ul>
     )
 }

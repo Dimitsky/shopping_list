@@ -1,60 +1,57 @@
 /* checkbox */
 
-.checkboxWrap {
-    padding: 0.5em;
-}
-
-.checkboxInner {
-    --size: 1em;
+.container {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    height: var(--size);
-    width: var(--size);
-}
-
-.checkboxInput {
-    --color: #2A9D8F;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
-}
-
-.checkboxInput::after {
-    --size: 65%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    content: '';
-    display: none;
-    border-radius: 50%;
-    height: var(--size);
-    width: var(--size);
-    background: var(--color);
-}
-
-.checkboxInput::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 2px solid var(--color);
-    border-radius: 50%;
     display: block;
-    height: 100%;
-    width: 100%;
+    margin-right: 0.5rem;
 }
 
-.checkboxInput:checked::after {
+.checkbox {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+
+.checkmark {
+    position: relative;
     display: block;
+    border: 0.1em solid #000;
+    border-radius: 50%;
+    width: 1.2em;
+    height: 1.2em;
+    padding: 0.1em;
+    background: transparent;
+    background-clip: content-box;
+    transition: border-color 100ms ease-in-out, background-color 100ms ease-in-out;
 }
 
-.checkboxInput:disabled {
-    --color: grey;
+/* checked */
+
+.checkbox:checked ~ .checkmark {
+    border-color: seagreen;
+    background-color: seagreen;
+}
+
+.checkbox:checked ~ .checkmark::before {
+    opacity: 1;
+}
+
+/* focus */
+
+.checkbox:focus-visible ~ .checkmark {
+    outline: 2px solid blue;
+}
+
+/* disabled */
+
+.checkbox:checked:disabled ~ .checkmark {
+    border-color: grey;
+    background-color: grey;
+}
+
+.checkbox:disabled ~ .checkmark {
+    border-color: grey;
 }
 
 /*  */
@@ -66,6 +63,7 @@
 }
 
 .titleCompleted {
+    color: #999;
     text-decoration: line-through;
 }
 
@@ -77,17 +75,4 @@
     font: inherit;
     line-height: 1.5;
     outline: none;
-}
-
-.infoBtn {
-    composes: resetBtn from '../../index.css';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5em;
-    font-size: inherit;
-}
-
-.infoIcon {
-    composes: icon from '../../index.css';
 }

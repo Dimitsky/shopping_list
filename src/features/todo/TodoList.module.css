@@ -5,7 +5,17 @@
     list-style: none;
 }
 
-.item {
+.item {}
+
+.inner {
     display: flex;
     align-items: center;
+}
+
+.heading {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.7em;
+    line-height: 1;
+    text-align: right;
 }
