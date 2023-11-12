@@ -13,8 +13,8 @@ export function TodoList({ list }: TodoListProps) {
             id="todoList"
         >
             {list.map((todo, index, arr) => {
-                const prevFirstLetter = index === 0 ? arr[index].title.at(0)?.toUpperCase() : arr[index - 1].title.at(0)?.toUpperCase();
-                const currFirstLettre = arr[index].title.at(0)?.toUpperCase();
+                const prevFirstLetter = index === 0 ? arr[index].title[0]?.toUpperCase() : arr[index - 1].title[0]?.toUpperCase();
+                const currFirstLettre = arr[index].title[0]?.toUpperCase();
 
                 return (
                     <li
